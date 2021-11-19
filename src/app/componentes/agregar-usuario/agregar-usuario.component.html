@@ -1,0 +1,63 @@
+<div class="card">
+    <div class="card-header mt-3">
+        Agregar usuario
+    </div>
+    <div class="container mt-3"> 
+        <form [formGroup]="formularioDeUsuarios" (ngSubmit)="enviarDatos()">
+            <div class="mt-3">
+              <label for="" class="form-label">Nombre</label>
+              <input type="text"
+                class="form-control" 
+                name="" 
+                formControlName="nombre" 
+                id=""
+                aria-describedby="helpId" 
+                placeholder="Escribe tu nombre">
+            </div>
+
+            <div class="mt-3">
+              <label for="" class="form-label">Apellidos</label>
+              <input type="text"
+                class="form-control" 
+                name="" 
+                formControlName="apellidos" 
+                id="" 
+                aria-describedby="helpId" 
+                placeholder="Escribe tus apellidos">
+            </div>
+
+            <div class="mt-3">
+              <label for="" class="form-label">Direccion</label>
+              <input type="text"
+                class="form-control" 
+                name="" 
+                formControlName="direccion" 
+                id="" 
+                aria-describedby="helpId" 
+                placeholder="Ingresa tu dirección">
+            </div>
+
+            <div class="mb-3">
+              <label for="" class="form-label">CURP</label>
+              <input type="text"
+                class="form-control" 
+                name="" 
+                formControlName="curp" 
+                id="" 
+                aria-describedby="helpId" 
+                maxlength="18" 
+                pattern="/^([A-Z]{4}\d{6}[A-Z]{6}\d{2})$/" placeholder="Ingresa tu CURP">
+                <div *ngIf="isCorrect === true">
+                    <p> {{ textError }}</p>
+                </div>
+            </div>
+
+            <div class="btn-group" role="group" aria-label="">
+
+                <button type="submit" class="btn btn-success">Agregar</button>
+
+            </div>
+        </form>
+        {{ formularioDeUsuarios.value | json }}
+    </div>
+</div>
